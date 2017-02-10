@@ -1,4 +1,4 @@
-package automationTests;
+package automationTests.accounts;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
@@ -17,8 +17,8 @@ public class ShouldLoginIntoTestUserAccount extends Login {
         automationSetup.goToDefaultPage();
 
         addDetails(
-                "test@email.com",
-                "qa_automation"
+                "steven@email.com",
+                "password"
         );
 
         Thread.sleep(1000);

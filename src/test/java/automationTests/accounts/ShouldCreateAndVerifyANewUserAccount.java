@@ -1,4 +1,4 @@
-package automationTests;
+package automationTests.accounts;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
