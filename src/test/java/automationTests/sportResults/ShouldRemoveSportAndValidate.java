@@ -1,22 +1,27 @@
-package automationTests.creatingEvents;
+package automationTests.sportResults;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
-import pageObjects.Login;
-import pageObjects.Wall;
+import org.openqa.selenium.NoSuchElementException;
+import pageObjects.*;
 
 /**
  * Created by stevenstretton on 10/02/2017.
  */
-public class ShouldAddASportAndDisplayOnTheWall extends Login{
+public class ShouldRemoveSportAndValidate extends Login{
 
+    private Home home;
+    private Sport sport;
     private Wall wall;
+    private Navbar navbar;
 
-    @Test
-    public void ShouldAddASportAndDisplayOnTheWall() throws InterruptedException{
+    @Test (expected = NoSuchElementException.class)
+    public void shouldRemoveSportAndValidate() throws InterruptedException{
         AutomationSetup automationSetup = new AutomationSetup();
         automationSetup.executeInitialisationSettings();
         automationSetup.goToDefaultPage();
+
+        home.selectLoginButton();
 
         addDetails(
                 "steven@email.com",
@@ -27,23 +32,24 @@ public class ShouldAddASportAndDisplayOnTheWall extends Login{
 
         selectLoginButton();
 
-        Thread.sleep(1000);
+        wall.goToSportPage();
 
-        wall.addSport(
+        sport.add(
                 "Cycling",
                 "43",
                 "00:02:31"
         );
 
-        Thread.sleep(1000);
-
-        wall.sportSubmit();
 
         Thread.sleep(1000);
 
+        sport.submit();
 
+        navbar.selectMyWall();
 
+        wall.checkSportHasBeenRemoved();
 
+        Thread.sleep(1000);
 
         automationSetup.endOfAutomationTest();
     }

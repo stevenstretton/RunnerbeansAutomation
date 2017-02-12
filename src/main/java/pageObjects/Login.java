@@ -17,6 +17,18 @@ public class Login {
         formSignIn.click();
     }
 
+    public void selectLogoutButton()
+    {
+        WebElement formSignOut = driver.findElement(By.xpath(".//*[@id='navbar-main']/ul[2]/li[4]/a"));
+
+        formSignOut.click();
+    }
+
+    protected void addDetails(String formEmail, String formPassword)
+    {
+        enterEmailAddress(formEmail);
+        enterPassword(formPassword);
+    }
 
     private void enterEmailAddress(String email)
     {
@@ -34,9 +46,4 @@ public class Login {
         formPassword.sendKeys(password);
     }
 
-    protected void addDetails(String formEmail, String formPassword)
-    {
-        enterEmailAddress(formEmail);
-        enterPassword(formPassword);
-    }
 }

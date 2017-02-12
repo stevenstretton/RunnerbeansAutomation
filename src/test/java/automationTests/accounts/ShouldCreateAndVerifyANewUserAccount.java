@@ -2,6 +2,7 @@ package automationTests.accounts;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
+import pageObjects.Home;
 import pageObjects.Login;
 import pageObjects.Signup;
 
@@ -10,6 +11,8 @@ import pageObjects.Signup;
  */
 public class ShouldCreateAndVerifyANewUserAccount extends Login {
 
+    private Home home;
+
     @Test
     public void shouldLoginIntoTestUserAccount()  throws InterruptedException
     {
@@ -17,6 +20,7 @@ public class ShouldCreateAndVerifyANewUserAccount extends Login {
         automationSetup.executeInitialisationSettings();
         automationSetup.goToDefaultPage();
 
+        home.selectSignUpButton();
 
         Signup signup = new Signup();
 

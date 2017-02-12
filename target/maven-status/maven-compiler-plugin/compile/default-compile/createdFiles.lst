@@ -5,3 +5,4 @@ configurations/FirefoxSettings.class
 pageObjects/Home.class
 pageObjects/Navbar.class
 configurations/driver/FirefoxDriver.class
+pageObjects/Wall.class

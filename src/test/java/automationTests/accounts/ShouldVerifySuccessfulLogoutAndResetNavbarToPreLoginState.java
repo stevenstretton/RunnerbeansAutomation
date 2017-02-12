@@ -2,19 +2,24 @@ package automationTests.accounts;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
+import pageObjects.Home;
 import pageObjects.Login;
 
 /**
  * Created by stevenstretton on 01/02/2017.
  */
-public class ShouldLoginIntoTestUserAccount extends Login {
+public class ShouldVerifySuccessfulLogoutAndResetNavbarToPreLoginState extends Login {
+
+    private Home home;
 
     @Test
-    public void shouldLoginIntoTestUserAccount() throws InterruptedException
+    public void shouldVerifySuccessfulLogoutAndResetNavbarToPreLoginState() throws InterruptedException
     {
         AutomationSetup automationSetup = new AutomationSetup();
         automationSetup.executeInitialisationSettings();
         automationSetup.goToDefaultPage();
+
+        home.selectLoginButton();
 
         addDetails(
                 "steven@email.com",
@@ -24,6 +29,12 @@ public class ShouldLoginIntoTestUserAccount extends Login {
         Thread.sleep(1000);
 
         selectLoginButton();
+
+        Thread.sleep(1000);
+
+        selectLogoutButton();
+
+        home.validatePreLogin();
 
         Thread.sleep(1000);
 

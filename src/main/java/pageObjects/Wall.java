@@ -10,51 +10,22 @@ import static configurations.FirefoxSettings.driver;
  */
 public class Wall {
 
-    public void addSport(String type, String distance, String time)
+    public void goToSportPage()
     {
-        sportType(type);
-        sportDistance(distance);
-        sportTime(time);
+        WebElement addSportBtn = driver.findElement(By.xpath("html/body/app-root/div[2]/app-root/div[2]/div/p/a"));
+
+        addSportBtn.click();
     }
 
-    public void sportSubmit()
+    public void sportPanelValidateSport(String sport)
     {
-        WebElement sportSubmit = driver.findElement(By.cssSelector("#submit"));
-
-        sportSubmit.click();
+        WebElement findTextString = driver.findElement(By.xpath("//*[contains(text(),\"" + sport + "\")]"));
     }
 
-
-    private void sportType(String type)
+    public void checkSportHasBeenRemoved()
     {
-        WebElement sportSelectEvent = driver.findElement(By.cssSelector("#sport.type"));
-
-        sportSelectEvent.sendKeys(type);
+        driver.findElement(By.cssSelector(""));
     }
-
-    private void sportDistance(String distance)
-    {
-        WebElement sportEnterDistance = driver.findElement(By.cssSelector("#sport.type"));
-
-        sportEnterDistance.sendKeys(distance);
-    }
-
-    private void sportTime(String time)
-    {
-        WebElement sportEnterTime = driver.findElement(By.cssSelector("#sport.type"));
-
-        sportEnterTime.sendKeys(time);
-    }
-
-
-    private void sportPanelFindRun()
-    {
-        WebElement findTextString = driver.findElement(By.xpath("//*[contains(text(),\"Running\")]"));
-
-
-    }
-
-
 
 
 

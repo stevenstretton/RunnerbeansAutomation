@@ -1,2 +1,3 @@
-automationTests/ShouldCreateAndVerifyANewUserAccount.class
-automationTests/ShouldLoginIntoTestUserAccount.class
+automationTests/accounts/ShouldCreateAndVerifyANewUserAccount.class
+automationTests/accounts/ShouldLoginIntoTestUserAccount.class
+automationTests/creatingEvents/ShouldAddASportAndDisplayOnTheWall.class

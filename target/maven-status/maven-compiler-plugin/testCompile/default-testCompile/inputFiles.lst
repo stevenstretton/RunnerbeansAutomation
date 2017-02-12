@@ -1,2 +1,3 @@
-/Users/stevenstretton/git/modules/RunnerbeansAutomation/src/test/java/automationTests/ShouldLoginIntoTestUserAccount.java
-/Users/stevenstretton/git/modules/RunnerbeansAutomation/src/test/java/automationTests/ShouldCreateAndVerifyANewUserAccount.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/creatingEvents/ShouldAddASportAndDisplayOnTheWall.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/accounts/ShouldLoginIntoTestUserAccount.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/accounts/ShouldCreateAndVerifyANewUserAccount.java
