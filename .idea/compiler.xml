@@ -26,7 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="RunnerbeansAutomation" target="1.5" />
+      <module name="RunnerbeansAutomation" target="${jdk.level}" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,8 +1,10 @@
 pageObjects/Login.class
 configurations/AutomationSetup.class
 pageObjects/Signup.class
+pageObjects/Sport.class
 configurations/FirefoxSettings.class
 pageObjects/Home.class
+pageObjects/Account.class
 pageObjects/Navbar.class
 configurations/driver/FirefoxDriver.class
 pageObjects/Wall.class

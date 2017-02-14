@@ -1,23 +1,23 @@
 package automationTests.sportResults;
 
 import configurations.AutomationSetup;
+import org.junit.Assert;
 import org.junit.Test;
-import pageObjects.Home;
-import pageObjects.Login;
-import pageObjects.Sport;
-import pageObjects.Wall;
+import org.openqa.selenium.NoSuchElementException;
+import pageObjects.*;
 
 /**
  * Created by stevenstretton on 10/02/2017.
  */
-public class ShouldAddASportAndDisplayOnTheWall extends Login{
+public class ShouldVerifyThatMapPointsAreDisplayed extends Login{
 
     private Home home = new Home();
     private Sport sport = new Sport();
     private Wall wall = new Wall();
+    private Navbar navbar = new Navbar();
 
     @Test
-    public void shouldAddASportAndDisplayOnTheWall() throws InterruptedException{
+    public void shouldVerifyThatMapPointsAreDisplayed() throws InterruptedException{
         AutomationSetup automationSetup = new AutomationSetup();
         automationSetup.executeInitialisationSettings();
         automationSetup.goToDefaultPage();
@@ -33,23 +33,26 @@ public class ShouldAddASportAndDisplayOnTheWall extends Login{
 
         selectLoginButton();
 
-        Thread.sleep(3000);
-
         wall.goToSportPage();
 
         sport.add(
-                "Cycling",
-                "43",
-                "00:02:31"
+                "Canoeing",
+                "12",
+                "00:13:27"
         );
+
 
         Thread.sleep(1000);
 
         sport.submit();
 
-        wall.sportPanelValidateSport("Cycling");
+        navbar.selectMyWall();
 
-        Thread.sleep(1000);
+        try {
+            wall.verifyMapisDisplayedWithPolyline();
+        } catch (NoSuchElementException e) {
+            Assert.fail("Unable to find map path");
+        }
 
         automationSetup.endOfAutomationTest();
     }

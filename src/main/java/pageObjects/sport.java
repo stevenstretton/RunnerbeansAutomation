@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import static configurations.FirefoxSettings.driver;
 
@@ -36,21 +37,22 @@ public class Sport {
 
     private void sportType(String type)
     {
-        WebElement sportSelectEvent = driver.findElement(By.cssSelector("#sport.type"));
+        WebElement sportSelectEvent = driver.findElement(By.xpath(".//*[@id='sport.type']"));
 
-        sportSelectEvent.sendKeys(type);
+        Select dropdown = new Select(sportSelectEvent);
+        dropdown.selectByVisibleText(type);
     }
 
     private void sportDistance(String distance)
     {
-        WebElement sportEnterDistance = driver.findElement(By.cssSelector("#sport.type"));
+        WebElement sportEnterDistance = driver.findElement(By.xpath(".//*[@id='sport.distance']"));
 
         sportEnterDistance.sendKeys(distance);
     }
 
     private void sportTime(String time)
     {
-        WebElement sportEnterTime = driver.findElement(By.cssSelector("#sport.type"));
+        WebElement sportEnterTime = driver.findElement(By.xpath(".//*[@id='sport.time']"));
 
         sportEnterTime.sendKeys(time);
     }

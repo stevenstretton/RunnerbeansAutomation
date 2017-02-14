@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<suite name="Runnerbean test suite">
+    <test name="Automation Tests">
+        <classes>
+            <class name="automationTests.accounts.ShouldVerifySuccessfulAccountEmailChange"/>
+            <class name="automationTests.accounts.ShouldCreateAndVerifyANewUserAccount"/>
+            <class name="automationTests.accounts.ShouldVerifySuccessfulLogoutAndResetNavbarToPreLoginState"/>
+            <class name="automationTests.navigation.ShouldVerifyCorrectNavbarLinksAreDisplayed"/>
+            <class name="automationTests.sportResults.ShouldRemoveSportAndValidate"/>
+            <class name="automationTests.sportResults.ShouldVerifyThatMapPointsAreDisplayed"/>
+            <class name="automationTests.sportResults.ShouldWowSportAndValidate"/>
+            <class name="automationTests.sportResults.ShouldAddASportAndDisplayOnTheWall"/>
+        </classes>
+    </test>
+</suite>

@@ -11,10 +11,10 @@ import pageObjects.Signup;
  */
 public class ShouldCreateAndVerifyANewUserAccount extends Login {
 
-    private Home home;
+    private Home home = new Home();
 
     @Test
-    public void shouldLoginIntoTestUserAccount()  throws InterruptedException
+    public void shouldCreateAndVerifyANewUserAccount()  throws InterruptedException
     {
         AutomationSetup automationSetup = new AutomationSetup();
         automationSetup.executeInitialisationSettings();
@@ -37,9 +37,11 @@ public class ShouldCreateAndVerifyANewUserAccount extends Login {
 
         automationSetup.goToDefaultPage();
 
+        home.selectLoginButton();
+
         addDetails(
-                "test@email.com",
-                "qa_automation"
+                "steven@email.com",
+                "password"
         );
 
         Thread.sleep(1000);

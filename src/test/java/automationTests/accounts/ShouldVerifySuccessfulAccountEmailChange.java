@@ -12,9 +12,9 @@ import pageObjects.Navbar;
  */
 public class ShouldVerifySuccessfulAccountEmailChange extends Login {
 
-    private Home home;
-    private Navbar navbar;
-    private Account account;
+    private Home home = new Home();
+    private Navbar navbar = new Navbar();
+    private Account account = new Account();
 
     @Test
     public void shouldVerifySuccessfulAccountEmailChange() throws InterruptedException
@@ -34,9 +34,11 @@ public class ShouldVerifySuccessfulAccountEmailChange extends Login {
 
         selectLoginButton();
 
-        Thread.sleep(1000);
+        Thread.sleep(4000);
 
         navbar.selectAccount();
+
+        Thread.sleep(1000);
 
         account.selectEditEmailBtn();
 

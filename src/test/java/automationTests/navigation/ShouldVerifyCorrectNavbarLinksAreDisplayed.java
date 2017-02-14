@@ -1,4 +1,4 @@
-package automationTests.sportResults;
+package automationTests.navigation;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
@@ -7,46 +7,54 @@ import pageObjects.*;
 /**
  * Created by stevenstretton on 10/02/2017.
  */
-public class ShouldRemoveSportAndValidate extends Login{
+public class ShouldVerifyCorrectNavbarLinksAreDisplayed extends Login{
 
-    private Home home = new Home();
-    private Sport sport = new Sport();
-    private Wall wall = new Wall();
     private Navbar navbar = new Navbar();
 
     @Test
-    public void shouldRemoveSportAndValidate() throws InterruptedException{
+    public void shouldWowSportAndValidate() throws InterruptedException{
         AutomationSetup automationSetup = new AutomationSetup();
         automationSetup.executeInitialisationSettings();
         automationSetup.goToDefaultPage();
 
-        home.selectLoginButton();
+        //pre login stage
+        navbar.selectAbout();
+
+        Thread.sleep(1000);
+
+        navbar.selectSignup();
+
+        Thread.sleep(1000);
+
+        navbar.selectLogin();
 
         addDetails(
                 "steven@email.com",
                 "password"
         );
 
-        Thread.sleep(1000);
-
         selectLoginButton();
 
-        wall.goToSportPage();
+        Thread.sleep(2000);
 
-        sport.add(
-                "Cycling",
-                "43",
-                "00:02:31"
-        );
-
+        //post login stage
+        navbar.selectAccount();
 
         Thread.sleep(1000);
 
-        sport.submit();
+        navbar.selectSport();
+
+        Thread.sleep(1000);
 
         navbar.selectMyWall();
 
-        wall.checkSportHasBeenRemoved();
+        Thread.sleep(1000);
+
+        navbar.selectLogout();
+
+        Thread.sleep(1000);
+
+        navbar.selectHome();
 
         Thread.sleep(1000);
 

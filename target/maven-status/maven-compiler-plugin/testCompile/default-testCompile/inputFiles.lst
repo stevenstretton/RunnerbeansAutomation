@@ -1,3 +1,8 @@
-/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/creatingEvents/ShouldAddASportAndDisplayOnTheWall.java
-/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/accounts/ShouldLoginIntoTestUserAccount.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/accounts/ShouldVerifySuccessfulAccountEmailChange.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/sportResults/ShouldRemoveSportAndValidate.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/accounts/ShouldVerifySuccessfulLogoutAndResetNavbarToPreLoginState.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/navigation/ShouldVerifyCorrectNavbarLinksAreDisplayed.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/sportResults/ShouldWowSportAndValidate.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/sportResults/ShouldVerifyThatMapPointsAreDisplayed.java
 /Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/accounts/ShouldCreateAndVerifyANewUserAccount.java
+/Users/stevenstretton/git/repos/runnerbeansautomation/src/test/java/automationTests/sportResults/ShouldAddASportAndDisplayOnTheWall.java

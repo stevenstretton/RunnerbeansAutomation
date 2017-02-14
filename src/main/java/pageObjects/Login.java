@@ -32,16 +32,16 @@ public class Login {
 
     private void enterEmailAddress(String email)
     {
-        WebElement formEmail = driver.findElement(By.xpath("html/body/app-root/div[2]/app-login/form" +
-                "/fieldset/div[1]/div/input"));
+        WebElement formEmail = driver.findElement(By.xpath("html/body/app-root/div[2]/app-login/div/div[2]/div/div" +
+                "/form/fieldset/div[1]/div/input"));
 
         formEmail.sendKeys(email);
     }
 
     private void enterPassword(String password)
     {
-        WebElement formPassword = driver.findElement(By.xpath("html/body/app-root/div[2]/app-login/form" +
-                "/fieldset/div[2]/div/input"));
+        WebElement formPassword = driver.findElement(By.xpath("html/body/app-root/div[2]/app-login/div/div[2]/div/div" +
+                "/form/fieldset/div[2]/div/input"));
 
         formPassword.sendKeys(password);
     }

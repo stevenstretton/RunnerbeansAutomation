@@ -2,22 +2,20 @@ package automationTests.sportResults;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
-import pageObjects.Home;
-import pageObjects.Login;
-import pageObjects.Sport;
-import pageObjects.Wall;
+import pageObjects.*;
 
 /**
  * Created by stevenstretton on 10/02/2017.
  */
-public class ShouldAddASportAndDisplayOnTheWall extends Login{
+public class ShouldWowSportAndValidate extends Login{
 
     private Home home = new Home();
     private Sport sport = new Sport();
     private Wall wall = new Wall();
+    private Navbar navbar = new Navbar();
 
     @Test
-    public void shouldAddASportAndDisplayOnTheWall() throws InterruptedException{
+    public void shouldWowSportAndValidate() throws InterruptedException{
         AutomationSetup automationSetup = new AutomationSetup();
         automationSetup.executeInitialisationSettings();
         automationSetup.goToDefaultPage();
@@ -33,23 +31,26 @@ public class ShouldAddASportAndDisplayOnTheWall extends Login{
 
         selectLoginButton();
 
-        Thread.sleep(3000);
-
         wall.goToSportPage();
 
         sport.add(
-                "Cycling",
-                "43",
-                "00:02:31"
+                "Running",
+                "5",
+                "00:50:31"
         );
+
 
         Thread.sleep(1000);
 
         sport.submit();
 
-        wall.sportPanelValidateSport("Cycling");
+        navbar.selectMyWall();
+
+        wall.selectWow();
 
         Thread.sleep(1000);
+
+        wall.verifyWowCount(1);
 
         automationSetup.endOfAutomationTest();
     }

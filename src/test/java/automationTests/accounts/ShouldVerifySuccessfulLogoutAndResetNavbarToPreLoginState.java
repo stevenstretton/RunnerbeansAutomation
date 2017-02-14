@@ -10,7 +10,7 @@ import pageObjects.Login;
  */
 public class ShouldVerifySuccessfulLogoutAndResetNavbarToPreLoginState extends Login {
 
-    private Home home;
+    private Home home = new Home();
 
     @Test
     public void shouldVerifySuccessfulLogoutAndResetNavbarToPreLoginState() throws InterruptedException
