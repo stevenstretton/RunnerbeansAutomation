@@ -47,7 +47,9 @@ public class ShouldAddASportAndDisplayOnTheWall extends Login{
 
         sport.submit();
 
-        wall.sportPanelValidateSport("Cycling");
+        Thread.sleep(2000);
+
+        wall.sportPanelValidateSport("Steven Stretton - Cycling");
 
         Thread.sleep(1000);
 

@@ -19,7 +19,7 @@ public class Login {
 
     public void selectLogoutButton()
     {
-        WebElement formSignOut = driver.findElement(By.xpath(".//*[@id='navbar-main']/ul[2]/li[4]/a"));
+        WebElement formSignOut = driver.findElement(By.xpath("//*[@id='navbar-main']/ul[2]/li[4]/a"));
 
         formSignOut.click();
     }

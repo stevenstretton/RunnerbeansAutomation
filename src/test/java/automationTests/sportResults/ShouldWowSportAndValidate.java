@@ -48,7 +48,13 @@ public class ShouldWowSportAndValidate extends Login{
 
         wall.selectWow();
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+
+        navbar.selectAccount();
+
+        Thread.sleep(2000);
+
+        navbar.selectMyWall();
 
         wall.verifyWowCount(1);
 

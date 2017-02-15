@@ -2,6 +2,7 @@ package automationTests.sportResults;
 
 import configurations.AutomationSetup;
 import org.junit.Test;
+import org.openqa.selenium.ElementNotVisibleException;
 import pageObjects.*;
 
 /**
@@ -14,7 +15,7 @@ public class ShouldRemoveSportAndValidate extends Login{
     private Wall wall = new Wall();
     private Navbar navbar = new Navbar();
 
-    @Test
+    @Test (expected = ElementNotVisibleException.class)
     public void shouldRemoveSportAndValidate() throws InterruptedException{
         AutomationSetup automationSetup = new AutomationSetup();
         automationSetup.executeInitialisationSettings();
@@ -46,7 +47,13 @@ public class ShouldRemoveSportAndValidate extends Login{
 
         navbar.selectMyWall();
 
-        wall.checkSportHasBeenRemoved();
+        Thread.sleep(2000);
+
+        wall.selectDeleteSportBtn();
+
+        Thread.sleep(1000);
+
+        wall.checkSportHasBeenRemoved("Steven Stretton - Cycling");
 
         Thread.sleep(1000);
 

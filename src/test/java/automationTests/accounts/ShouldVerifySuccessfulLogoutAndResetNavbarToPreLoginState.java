@@ -30,7 +30,7 @@ public class ShouldVerifySuccessfulLogoutAndResetNavbarToPreLoginState extends L
 
         selectLoginButton();
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         selectLogoutButton();
 

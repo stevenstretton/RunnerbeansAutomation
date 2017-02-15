@@ -35,6 +35,7 @@ public class ShouldVerifyThatMapPointsAreDisplayed extends Login{
 
         wall.goToSportPage();
 
+
         sport.add(
                 "Canoeing",
                 "12",
@@ -47,6 +48,8 @@ public class ShouldVerifyThatMapPointsAreDisplayed extends Login{
         sport.submit();
 
         navbar.selectMyWall();
+
+        Thread.sleep(2000);
 
         try {
             wall.verifyMapisDisplayedWithPolyline();

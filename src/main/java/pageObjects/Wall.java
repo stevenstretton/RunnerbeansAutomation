@@ -13,15 +13,14 @@ public class Wall {
 
     public void goToSportPage()
     {
-        WebElement addSportBtn = driver.findElement(By.xpath("html/body/app-root/div[2]/app-root/div/div[2]" +
-                "/div/div[3]/a"));
+        WebElement addSportBtn = driver.findElement(By.xpath("html/body/app-root/div[2]/app-root/div/div[2]/div/div[3]/a"));
 
         addSportBtn.click();
     }
 
     public void sportPanelValidateSport(String sport)
     {
-        WebElement findTextString = driver.findElement(By.xpath("//*[contains(text(),\"" + sport + "\")]"));
+        WebElement findTextString = driver.findElement(By.xpath("//*[contains(text(),'" + sport + "')]"));
 
         try {
             Assert.assertTrue(sport.contains(findTextString.getText()));
@@ -30,9 +29,15 @@ public class Wall {
         }
     }
 
-    public void checkSportHasBeenRemoved()
+    public void selectDeleteSportBtn()
     {
-        driver.findElement(By.cssSelector(""));
+        WebElement selectDeleteBtn = driver.findElement(By.xpath(".//*[@id='delete']"));
+        selectDeleteBtn.click();
+    }
+
+    public void checkSportHasBeenRemoved(String sport)
+    {
+        driver.findElement(By.xpath("//*[contains(text(),'" + sport + "')]"));
     }
 
     public void selectWow()
